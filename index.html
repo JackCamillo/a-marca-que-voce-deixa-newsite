@@ -194,7 +194,7 @@
 
                 <div class="flex flex-col lg:flex-row items-start justify-center gap-12">
                     <div class="lg:w-1/3 flex justify-center">
-                        <!-- Ebook Cover Image - Revertida para o posicionamento original -->
+                        <!-- Ebook Cover Image -->
                         <img
                             src="uploaded/7.jpg.jpeg"
                             alt="Capa do E-book A Marca que Você Deixa"
@@ -277,7 +277,8 @@
                     <h3 class="text-2xl font-semibold text-amber-700 mb-6">
                         Receba seu e-book agora!
                     </h3>
-                    <form id="ebook-form" class="space-y-4">
+                    <!-- Netlify Forms: Adicionado name e data-netlify="true" -->
+                    <form id="ebook-form" name="ebook" data-netlify="true" class="space-y-4">
                         <div>
                             <input
                                 type="text"
@@ -303,6 +304,7 @@
                             Baixar E-book Agora
                         </button>
                     </form>
+                    <!-- O JavaScript de status será removido no script para que o Netlify Forms gerencie -->
                     <p id="ebook-form-status" class="mt-4 text-center text-sm font-semibold text-amber-700 hidden">
                         <!-- Status message will appear here -->
                     </p>
@@ -414,7 +416,8 @@
                 <div class="flex flex-col md:flex-row gap-12 items-start justify-center">
                     <div class="md:w-1/2 bg-stone-100 p-8 rounded-lg shadow-lg text-left">
                         <h3 class="text-2xl font-semibold text-amber-700 mb-6">Envie sua Mensagem</h3>
-                        <form id="contact-form" class="space-y-4">
+                        <!-- Netlify Forms: Adicionado name e data-netlify="true" -->
+                        <form id="contact-form" name="contact" data-netlify="true" class="space-y-4">
                             <div>
                                 <label for="contact-name" class="block text-stone-700 text-sm font-bold mb-2">
                                     Nome:
@@ -458,6 +461,7 @@
                                 Enviar Mensagem
                             </button>
                         </form>
+                        <!-- O JavaScript de status será removido no script para que o Netlify Forms gerencie -->
                         <p id="contact-form-status" class="mt-4 text-center text-sm font-semibold text-amber-700 hidden">
                             <!-- Status message will appear here -->
                         </p>
@@ -568,43 +572,37 @@
             closeIcon.classList.toggle('hidden');
         });
 
-        // Ebook form submission
-        const ebookForm = document.getElementById('ebook-form');
-        const ebookFormStatus = document.getElementById('ebook-form-status');
+        // Removido o JavaScript de submissão do formulário do e-book para usar o Netlify Forms
+        // const ebookForm = document.getElementById('ebook-form');
+        // const ebookFormStatus = document.getElementById('ebook-form-status');
+        // ebookForm.addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     ebookFormStatus.textContent = 'Enviando...';
+        //     ebookFormStatus.classList.remove('hidden');
+        //     console.log('Formulário de e-book submetido!');
+        //     setTimeout(() => {
+        //         ebookFormStatus.textContent = 'Obrigado! Seu e-book foi enviado para o seu e-mail.';
+        //         ebookForm.reset();
+        //     }, 1500);
+        // });
 
-        ebookForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            ebookFormStatus.textContent = 'Enviando...';
-            ebookFormStatus.classList.remove('hidden');
-            console.log('Formulário de e-book submetido!');
-
-            // Simulate form submission success
-            setTimeout(() => {
-                ebookFormStatus.textContent = 'Obrigado! Seu e-book foi enviado para o seu e-mail.';
-                ebookForm.reset(); // Clear the form
-            }, 1500);
-        });
-
-        // Contact form submission
-        const contactForm = document.getElementById('contact-form');
-        const contactFormStatus = document.getElementById('contact-form-status');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            contactFormStatus.textContent = 'Enviando...';
-            console.log('Dados do formulário de contato:', {
-                name: document.getElementById('contact-name').value,
-                email: document.getElementById('contact-email').value,
-                message: document.getElementById('contact-message').value
-            });
-
-            // Simulate form submission success
-            setTimeout(() => {
-                contactFormStatus.textContent = 'Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.';
-                contactFormStatus.classList.remove('hidden'); // Make sure it's visible
-                contactForm.reset(); // Clear the form
-            }, 1500);
-        });
+        // Removido o JavaScript de submissão do formulário de contato para usar o Netlify Forms
+        // const contactForm = document.getElementById('contact-form');
+        // const contactFormStatus = document.getElementById('contact-form-status');
+        // contactForm.addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     contactFormStatus.textContent = 'Enviando...';
+        //     console.log('Dados do formulário de contato:', {
+        //         name: document.getElementById('contact-name').value,
+        //         email: document.getElementById('contact-email').value,
+        //         message: document.getElementById('contact-message').value
+        //     });
+        //     setTimeout(() => {
+        //         contactFormStatus.textContent = 'Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.';
+        //         contactFormStatus.classList.remove('hidden');
+        //         contactForm.reset();
+        //     }, 1500);
+        // });
 
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
