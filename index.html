@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Marca que Você Deixa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding-top: 80px; /* Padding for fixed navigation bar */
+            background-color: #f5f5f4; /* bg-stone-100 */
+            color: #44403c; /* text-stone-800 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom smooth scroll for section navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+        }
+
+        /* Basic styling for form focus */
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5); /* ring-amber-500 */
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-amber-700">
+                A Marca que Você Deixa
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-stone-600 hover:text-amber-700 transition duration-300">Início</a>
+                <a href="#course" class="text-stone-600 hover:text-amber-700 transition duration-300">Curso</a>
+                <a href="#ebook" class="text-stone-600 hover:text-amber-700 transition duration-300">E-book</a>
+                <a href="#mentorship" class="text-stone-600 hover:text-amber-700 transition duration-300">Mentoria</a>
+                <a href="#about" class="text-stone-600 hover:text-amber-700 transition duration-300">Sobre Mim</a>
+                <a href="#contact" class="text-stone-600 hover:text-amber-700 transition duration-300">Contato</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-stone-600 hover:text-amber-700 focus:outline-none focus:text-amber-700">
+                    <svg id="hamburger-icon" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path>
+                    </svg>
+                    <svg id="close-icon" class="h-6 w-6 fill-current hidden" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414L12 13.414l-4.864 4.864a1 1 0 01-1.414-1.414L10.586 12 5.722 7.136a1 1 0 011.414-1.414L12 10.586l4.864-4.864a1 1 0 011.414 1.414L13.414 12l4.864 4.864z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Content -->
+        <div id="mobile-menu" class="md:hidden bg-white py-2 px-6 shadow-inner hidden">
+            <a href="#home" class="block py-2 text-stone-600 hover:text-amber-700 transition duration-300">Início</a>
+            <a href="#course" class="block py-2 text-stone-600 hover:text-amber-700 transition duration-300">Curso</a>
+            <a href="#ebook" class="block py-2 text-stone-600 hover:text-amber-700 transition duration-300">E-book</a>
+            <a href="#mentorship" class="block py-2 text-stone-600 hover:text-amber-700 transition duration-300">Mentoria</a>
+            <a href="#about" class="block py-2 text-stone-600 hover:text-amber-700 transition duration-300">Sobre Mim</a>
+            <a href="#contact" class="block py-2 text-stone-600 hover:text-amber-700 transition duration-300">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="relative bg-gradient-to-r from-amber-700 to-orange-600 text-white flex items-center justify-center min-h-[calc(100vh-80px)] overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 z-0 opacity-10">
+                <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <pattern id="pattern-circles" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.2)" />
+                    </pattern>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)" />
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-6 py-20 text-center relative z-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Deixe <span class="text-orange-300">Sua Marca</span> com Coragem, Coerência e Impacto
+                </h1>
+                <p class="text-xl lg:text-2xl mb-10 max-w-3xl mx-auto opacity-90">
+                    Transforme sua liderança e desenvolvimento humano com mais de 20 anos de experiência ao seu lado.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#course" class="bg-amber-400 text-amber-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-amber-300 transform hover:scale-105 transition duration-300 ease-in-out">
+                        Conheça o Curso "A Marca que Você Deixa"
+                    </a>
+                    <a href="#mentorship" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-amber-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                        Agende Sua Mentoria
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Details Section -->
+        <section id="course" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-amber-800 mb-12">
+                    Curso "A Marca que Você Deixa"
+                </h2>
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <!-- Image of Jackeline speaking at an event -->
+                        <img
+                            src="uploaded:_MG_2293.jpg-6af3c3fc-b481-49fa-88c1-3b36267185b4"
+                            alt="Jackeline Camillo falando em um evento para uma plateia"
+                            class="rounded-xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition duration-500 ease-in-out"
+                        />
+                    </div>
+                    <div class="lg:w-1/2">
+                        <p class="text-lg leading-relaxed mb-6">
+                            Olá, pessoal! Passando por aqui para compartilhar uma novidade que preparei com muito carinho e experiência acumulada ao longo dos meus mais de 20 anos atuando com desenvolvimento humano e liderança.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-6">
+                            Acabo de lançar um curso prático, direto e transformador:
+                        </p>
+                        <ul class="list-disc list-inside text-lg leading-relaxed space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-amber-600 mr-2">🎯</span>
+                                <p>
+                                    São 6 módulos com conteúdo estratégico, emocional e aplicável — com reflexões, ferramentas, atividades, testes de personalidade, teste de sabotadores e materiais de apoio.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-amber-600 mr-2">👥</span>
+                                <p>
+                                    E o melhor: no final, você ainda participa de uma mentoria em grupo comigo, com no máximo 5 pessoas. Um espaço para aprofundar, trocar e sair com plano de ação.
+                                </p>
+                            </li>
+                        </ul>
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-4">Para quem é:</h3>
+                        <ul class="list-none space-y-2 text-lg mb-8">
+                            <li class="flex items-center">
+                                <span class="text-emerald-500 mr-2">✔️</span> Pessoas que influenciam equipes, projetos e decisões
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-emerald-500 mr-2">✔️</span> Quem quer deixar uma marca com coragem, coerência e impacto
+                            </li>
+                        </ul>
+                        <div class="bg-amber-50 border-l-4 border-amber-400 text-amber-800 p-4 rounded-md mb-8" role="alert">
+                            <p class="font-bold text-xl">💰 Valor especial de lançamento: R$ 197,00</p>
+                        </div>
+                        <a
+                            href="https://go.hotmart.com/G99917766M?dp=1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-amber-700 transform hover:scale-105 transition duration-300 ease-in-out"
+                        >
+                            Garanta Sua Vaga na Hotmart
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-16 text-center">
+                    <h3 class="text-2xl font-semibold text-amber-700 mb-6">Depoimentos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-stone-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-stone-200">
+                            <p class="italic text-stone-700 mb-4">"O curso 'A Marca que Você Deixa' foi um divisor de águas na minha carreira. Conteúdo profundo e aplicável!"</p>
+                            <p class="font-semibold text-amber-600">- Ana Paula S.</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-stone-200">
+                            <p class="italic text-stone-700 mb-4">"A mentoria em grupo é fantástica! A troca de experiências e o plano de ação me deram clareza e direção."</p>
+                            <p class="font-semibold text-amber-600">- João Victor L.</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-stone-200">
+                            <p class="italic text-stone-700 mb-4">"Recomendo para todos que buscam desenvolver uma liderança autêntica e impactante. Vale cada centavo!"</p>
+                            <p class="font-semibold text-amber-600">- Mariana R.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ebook Section -->
+        <section id="ebook" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-amber-800 mb-4">
+                    A Marca que Você Deixa: 7 Atitudes de Liderança que Geram Impacto (ou Afastam Pessoas)
+                </h2>
+                <p class="text-xl text-stone-700 mb-10 max-w-3xl mx-auto">
+                    Um guia essencial para líderes que desejam transformar o seu impacto e deixar uma marca duradoura.
+                </p>
+
+                <div class="flex flex-col lg:flex-row items-start justify-center gap-12">
+                    <div class="lg:w-1/3 flex justify-center">
+                        <!-- Ebook Cover Image -->
+                        <img
+                            src="uploaded:7.jpg-fe9ca755-1f91-49b2-be85-b520a7389075"
+                            alt="Capa do E-book A Marca que Você Deixa"
+                            class="rounded-lg shadow-xl w-full max-w-xs md:max-w-sm h-auto object-cover border-2 border-stone-200"
+                        />
+                    </div>
+
+                    <div class="lg:w-2/3 text-left">
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-6">Introdução</h3>
+                        <p class="text-lg leading-relaxed mb-8">
+                            "Liderar é escolher, todos os dias, qual marca você vai deixar nas pessoas." Com mais de 20 anos de experiência como líder e formadora de líderes, Jackeline Camillo tem observado de perto o impacto emocional que a liderança pode ter na vida de uma pessoa. Uma boa liderança deixa uma marca. Uma ruim... também. Este e-book foi criado para você que lidera – de maneira formal ou informal – e quer refletir sobre a marca que está deixando.
+                        </p>
+
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-6">
+                            Os 7 Erros Comuns na Liderança
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                                <h4 class="text-xl font-bold text-amber-600 mb-2">1. Liderança Ausente</h4>
+                                <p class="text-stone-700 mb-3">O tipo de liderança que só aparece para exigir resultados e não acompanha o processo.</p>
+                                <p class="italic text-stone-500 text-sm">Reflexão: Quantas vezes seu time ouviu de você só na hora da bronca?</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                                <h4 class="text-xl font-bold text-amber-600 mb-2">2. Feedbacks Mal Dados (ou Não Dados)</h4>
+                                <p class="text-stone-700 mb-3">Falta de retorno sobre o desempenho, ou feedbacks genéricos e desmotivadores.</p>
+                                <p class="italic text-stone-500 text-sm">Reflexão: Você dá feedback contínuo ou deixa acumular?</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                                <h4 class="text-xl font-bold text-amber-600 mb-2">3. Falta de Clareza sobre Prioridades</h4>
+                                <p class="text-stone-700 mb-3">Líderes que mudam o foco toda semana e deixam o time perdido.</p>
+                                <p class="italic text-stone-500 text-sm">Reflexão: Seu time sabe o que é prioridade hoje?</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                                <h4 class="text-xl font-bold text-amber-600 mb-2">4. Micromanagement</h4>
+                                <p class="text-stone-700 mb-3">Controle excessivo, falta de confiança e interferência em tarefas operacionais.</p>
+                                <p class="italic text-stone-500 text-sm">Reflexão: Você está liderando ou executando pelo time?</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                                <h4 class="text-xl font-bold text-amber-600 mb-2">5. Incoerência entre Discurso e Prática</h4>
+                                <p class="text-stone-700 mb-3">Líder que prega uma cultura e age de forma contrária.</p>
+                                <p class="italic text-stone-500 text-sm">Reflexão: Seu exemplo está alinhado com o que você cobra?</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                                <h4 class="text-xl font-bold text-amber-600 mb-2">6. Falta de Reconhecimento</h4>
+                                <p class="text-stone-700 mb-3">Líder que só aponta erros e nunca valoriza o que está indo bem.</p>
+                                <p class="italic text-stone-500 text-sm">Reflexão: Quando foi a última vez que você reconheceu um bom trabalho?</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                                <h4 class="text-xl font-bold text-amber-600 mb-2">7. Foco Excessivo em Resultado, Zero Olhar para o Clima</h4>
+                                <p class="text-stone-700 mb-3">Líder que só fala de metas, KPIs, números... e esquece das pessoas.</p>
+                                <p class="italic text-stone-500 text-sm">Reflexão: Você mede o clima do time ou só os resultados?</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-6">Conclusão</h3>
+                        <p class="text-lg leading-relaxed mb-8">
+                            Ser líder não é só bater meta. É marcar positivamente a vida das pessoas que cruzam o seu caminho.
+                            Quer aprofundar? Conheça meu curso 'A Marca que Você Deixa' e transforme o seu impacto como líder. Descubra como você pode melhorar sua liderança e deixar uma marca duradoura em sua equipe.
+                        </p>
+                         <a
+                            href="#course"
+                            class="inline-block bg-emerald-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-700 transform hover:scale-105 transition duration-300 ease-in-out mb-4"
+                         >
+                            Conheça o Curso 'A Marca que Você Deixa'
+                          </a>
+                          <p class="text-lg leading-relaxed mb-8 mt-4">
+                            Para agendar uma mentoria personalizada, visite a página de Mentoria para mais detalhes:
+                          </p>
+                          <a
+                            href="#mentorship"
+                            class="inline-block bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-amber-700 transform hover:scale-105 transition duration-300 ease-in-out"
+                          >
+                            Agende Sua Mentoria Agora
+                          </a>
+                    </div>
+                </div>
+
+                <!-- Lead Capture Form -->
+                <div class="bg-white p-8 rounded-lg shadow-lg mt-16 max-w-xl mx-auto border border-stone-200">
+                    <h3 class="text-2xl font-semibold text-amber-700 mb-6">
+                        Receba seu e-book agora!
+                    </h3>
+                    <form id="ebook-form" class="space-y-4">
+                        <div>
+                            <input
+                                type="text"
+                                id="ebook-name"
+                                placeholder="Seu Nome"
+                                class="w-full p-3 border border-stone-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="email"
+                                id="ebook-email"
+                                placeholder="Seu Melhor E-mail"
+                                class="w-full p-3 border border-stone-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                required
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            class="w-full bg-amber-600 text-white font-bold py-3 rounded-md shadow-lg hover:bg-amber-700 transform hover:scale-105 transition duration-300 ease-in-out"
+                        >
+                            Baixar E-book Agora
+                        </button>
+                    </form>
+                    <p id="ebook-form-status" class="mt-4 text-center text-sm font-semibold text-amber-700 hidden">
+                        <!-- Status message will appear here -->
+                    </p>
+                    <p class="text-sm text-stone-500 mt-4">
+                        Nós valorizamos a sua privacidade. Seus dados estão seguros conosco.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentorship Section -->
+        <section id="mentorship" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-amber-800 mb-8">
+                    Mentoria Individual em Liderança e Desenvolvimento Humano
+                </h2>
+                <p class="text-xl text-stone-700 mb-10 max-w-3xl mx-auto">
+                    Aprofunde seus conhecimentos e crie um plano de ação personalizado com sessões de mentoria focadas em seus desafios e objetivos. Com mais de 20 anos de experiência, vou te guiar para uma liderança mais consciente e impactante.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-4">Para quem é a mentoria?</h3>
+                        <ul class="list-disc list-inside text-lg leading-relaxed space-y-3 mb-6">
+                            <li>Profissionais que buscam clareza e direção em sua carreira.</li>
+                            <li>Líderes que desejam aprimorar suas habilidades de gestão de equipes e projetos.</li>
+                            <li>Indivíduos que querem desbloquear seu potencial e alcançar novos patamares.</li>
+                            <li>Qualquer pessoa pronta para um acompanhamento personalizado e resultados reais.</li>
+                        </ul>
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-4">Como funciona?</h3>
+                        <p class="text-lg leading-relaxed mb-6">
+                            Minhas mentorias são personalizadas, focadas em suas necessidades específicas. Após o agendamento, faremos um breve alinhamento para otimizar nossa sessão e garantir que você saia com um plano de ação claro e prático.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <!-- Image of Jackeline looking at phone, potentially representing a personalized session -->
+                        <img
+                            src="uploaded:Jack2025-24.jpg-f929f078-cb72-4f54-be9d-444e83273d15"
+                            alt="Jackeline Camillo interagindo com um celular, representando uma sessão de mentoria"
+                            class="rounded-xl shadow-2xl w-full max-w-md h-auto object-cover transform hover:scale-105 transition duration-500 ease-in-out"
+                        />
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a
+                        href="https://calendar.app.google/JDHyA4K4Ae1yMuT87"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block bg-emerald-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-700 transform hover:scale-105 transition duration-300 ease-in-out"
+                    >
+                        Agende Sua Mentoria Agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-stone-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-amber-800 mb-12">
+                    Sobre Mim
+                </h2>
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/3 flex justify-center">
+                        <!-- Professional photo of Jackeline Camillo -->
+                        <img
+                            src="uploaded:1.jpg-ccf45406-b843-4603-a46b-146f63d2b2cf"
+                            alt="Jackeline Camillo, foto profissional"
+                            class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-stone-200"
+                        />
+                    </div>
+                    <div class="lg:w-2/3 text-lg leading-relaxed">
+                        <p class="mb-6">
+                            Com <span class="font-bold text-amber-600">40 anos de vida</span> e mais de <span class="font-bold text-amber-600">20 anos de experiência</span> atuando com desenvolvimento humano e liderança, minha paixão é impulsionar o crescimento e o potencial das pessoas. Sou mãe da <span class="font-bold text-amber-600">Thaiany, de 22 anos, e da Allana, de 14 anos</span> — sem dúvidas, essa experiência desenvolveu uma das minhas mais difíceis e incríveis habilidades.
+                        </p>
+                        <p class="mb-6">
+                            Sou uma Executiva de Recursos Humanos, especialista em desenvolvimento de talentos, transformação organizacional e liderança estratégica. Minha trajetória foi construída em empresas líderes nos setores de tecnologia, bens de consumo, serviços, telecomunicação, indústria e educação, incluindo nomes como <span class="font-bold text-amber-600">iFood, Coty e Blip</span>, sempre impulsionando crescimento, inovação e performance por meio de estratégias de RH alinhadas ao negócio.
+                        </p>
+                        <p class="mb-6">
+                            <span class="font-bold text-amber-700">💡 Minha missão:</span> Acelerar a performance organizacional, fortalecer culturas empresariais e impulsionar talentos por meio do protagonismo, diversidade e desenvolvimento contínuo de pessoas.
+                        </p>
+                        <h3 class="text-xl font-semibold text-amber-700 mb-3">Reconhecimentos & Impacto:</h3>
+                        <ul class="list-none space-y-2 text-lg mb-6">
+                            <li class="flex items-center">
+                                <span class="text-emerald-500 mr-2">✅</span> Eleita uma das 100 Pessoas Mais Influentes de People
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-emerald-500 mr-2">✅</span> Mentora & Palestrante
+                            </li>
+                        </ul>
+                        <p class="font-semibold text-amber-700">
+                            Sou movida pela paixão por desenvolver pessoas e transformar culturas. Acredito que, ao potencializar talentos e fortalecer a cultura organizacional, geramos impacto real nos negócios e na sociedade. Vamos juntas e juntos construir marcas potentes e conscientes. #AVidaÉAGenteQueLidera
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-amber-800 mb-8">
+                    Entre em Contato
+                </h2>
+                <p class="text-xl text-stone-700 mb-10 max-w-2xl mx-auto">
+                    Tem alguma dúvida sobre o curso, e-book ou mentoria? Preencha o formulário abaixo ou utilize os contatos diretos.
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-12 items-start justify-center">
+                    <div class="md:w-1/2 bg-stone-100 p-8 rounded-lg shadow-lg text-left">
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-6">Envie sua Mensagem</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="contact-name" class="block text-stone-700 text-sm font-bold mb-2">
+                                    Nome:
+                                </label>
+                                <input
+                                    type="text"
+                                    id="contact-name"
+                                    name="name"
+                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-stone-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-amber-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-stone-700 text-sm font-bold mb-2">
+                                    E-mail:
+                                </label>
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="email"
+                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-stone-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-amber-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-stone-700 text-sm font-bold mb-2">
+                                    Mensagem:
+                                </label>
+                                <textarea
+                                    id="contact-message"
+                                    name="message"
+                                    rows="5"
+                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-stone-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-amber-500"
+                                    required
+                                ></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                class="bg-amber-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-700 transform hover:scale-105 transition duration-300 ease-in-out"
+                            >
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                        <p id="contact-form-status" class="mt-4 text-center text-sm font-semibold text-amber-700 hidden">
+                            <!-- Status message will appear here -->
+                        </p>
+                    </div>
+
+                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg text-left border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-6">Contatos Diretos</h3>
+                        <p class="text-lg mb-4">
+                            <strong>E-mail:</strong> <a href="mailto:jackelinekraiscamillo@gmail.com" class="text-amber-600 hover:underline">jackelinekraiscamillo@gmail.com</a>
+                        </p>
+                        <p class="text-lg mb-4">
+                            <strong>WhatsApp:</strong> <a href="https://wa.me/5511991233342" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:underline">+55 11 99123-3342</a>
+                        </p>
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-6 mt-8">Redes Sociais</h3>
+                        <div class="flex space-x-6">
+                            <a href="https://www.linkedin.com/in/jackeline-camillo" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-amber-700 transition duration-300">
+                                <!-- LinkedIn Icon -->
+                                <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/jackk_camillo" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-amber-700 transition duration-300">
+                                <!-- Instagram Icon (jackk_camillo) -->
+                                <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.7c-2.4 0-4.3 1.9-4.3 4.3v7.6c0 2.4 1.9 4.3 4.3 4.3h7.6c2.4 0 4.3-1.9 4.3-4.3V7.8c0-2.4-1.9-4.3-4.3-4.3H7.6z"/>
+                                    <path d="M12 15.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zM12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    <circle cx="16.9" cy="7.1" r=".7"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/dispa.mente" target="_blank" rel="noopener noreferrer" class="text-stone-600 hover:text-amber-700 transition duration-300">
+                                <!-- Instagram Icon (dispa.mente) -->
+                                <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.7c-2.4 0-4.3 1.9-4.3 4.3v7.6c0 2.4 1.9 4.3 4.3 4.3h7.6c2.4 0 4.3-1.9 4.3-4.3V7.8c0-2.4-1.9-4.3-4.3-4.3H7.6z"/>
+                                    <path d="M12 15.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zM12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                                    <circle cx="16.9" cy="7.1" r=".7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-white py-8">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; <span id="current-year"></span> A Marca que Você Deixa. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/jackeline-camillo" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400">
+                    <!-- LinkedIn Icon -->
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/jackk_camillo" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400">
+                    <!-- Instagram Icon -->
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.7c-2.4 0-4.3 1.9-4.3 4.3v7.6c0 2.4 1.9 4.3 4.3 4.3h7.6c2.4 0 4.3-1.9 4.3-4.3V7.8c0-2.4-1.9-4.3-4.3-4.3H7.6z"/>
+                        <path d="M12 15.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zM12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                        <circle cx="16.9" cy="7.1" r=".7"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/dispa.mente" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400">
+                    <!-- Instagram Icon for Dispa Mente -->
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.7c-2.4 0-4.3 1.9-4.3 4.3v7.6c0 2.4 1.9 4.3 4.3 4.3h7.6c2.4 0 4.3-1.9 4.3-4.3V7.8c0-2.4-1.9-4.3-4.3-4.3H7.6z"/>
+                        <path d="M12 15.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zM12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                        <circle cx="16.9" cy="7.1" r=".7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                if (window.innerWidth < 768) { // Check if it's mobile view
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const hamburgerIcon = document.getElementById('hamburger-icon');
+                    const closeIcon = document.getElementById('close-icon');
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Ebook form submission
+        const ebookForm = document.getElementById('ebook-form');
+        const ebookFormStatus = document.getElementById('ebook-form-status');
+
+        ebookForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            ebookFormStatus.textContent = 'Enviando...';
+            ebookFormStatus.classList.remove('hidden');
+            console.log('Formulário de e-book submetido!');
+
+            // Simulate form submission success
+            setTimeout(() => {
+                ebookFormStatus.textContent = 'Obrigado! Seu e-book foi enviado para o seu e-mail.';
+                ebookForm.reset(); // Clear the form
+            }, 1500);
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const contactFormStatus = document.getElementById('contact-form-status');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            contactFormStatus.textContent = 'Enviando...';
+            contactFormStatus.classList.remove('hidden');
+            console.log('Dados do formulário de contato:', {
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value
+            });
+
+            // Simulate form submission success
+            setTimeout(() => {
+                contactFormStatus.textContent = 'Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.';
+                contactForm.reset(); // Clear the form
+            }, 1500);
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Ensure smooth scroll on page load for initial hash (if any)
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
